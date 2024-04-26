@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Votación</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    .voting-options {
+        margin-top: 20px;
+    }
+    .voting-option {
+        margin-bottom: 10px;
+    }
+    .vote-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .vote-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Sistema de Votación</h1>
+    <div class="voting-options">
+        <div class="voting-option">
+            <input type="radio" id="option1" name="voting-option">
+            <label for="option1">Opción 1</label>
+        </div>
+        <div class="voting-option">
+            <input type="radio" id="option2" name="voting-option">
+            <label for="option2">Opción 2</label>
+        </div>
+        <div class="voting-option">
+            <input type="radio" id="option3" name="voting-option">
+            <label for="option3">Opción 3</label>
+        </div>
+    </div>
+    <button class="vote-button" onclick="castVote()">Votar</button>
+</div>
+
+<script>
+    function castVote() {
+        var selectedOption = document.querySelector('input[name="voting-option"]:checked');
+        if (selectedOption) {
+            alert("¡Tu voto ha sido registrado!");
+            // Aquí iría la lógica para enviar el voto al backend y procesarlo
+        } else {
+            alert("Por favor, selecciona una opción antes de votar.");
+        }
+    }
+</script>
+</body>
+</html>
